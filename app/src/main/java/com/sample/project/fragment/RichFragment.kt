@@ -1,30 +1,19 @@
-package com.sample.html
+package com.sample.project.fragment
 
 import android.annotation.SuppressLint
-import android.content.res.Resources.Theme
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.webkit.WebView
 import android.webkit.WebViewClient
-import androidx.appcompat.widget.AppCompatTextView
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.sample.project.R
+import com.sample.project.databinding.FragmentRichBinding
+import com.sample.project.fragment.base.BaseDataBindingFragment
+import com.sample.project.viewModel.RichViewModel
 
-@Suppress("DEPRECATION")
-class RichFragment: Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_rich, container, false)
-    }
-
+class RichFragment: BaseDataBindingFragment<RichViewModel, FragmentRichBinding>(
+    R.layout.fragment_rich
+) {
+    override val viewModel: RichViewModel by viewModels()
     @SuppressLint("SetJavaScriptEnabled")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun initView() {
         val htmlData2 = "<html><head><style type=\"text/css\">body{text-align:center;}</style></head><body>" +
                 "<img width=\"100\" src='file:///android_asset/soseki.jpeg' alt='Sample Image'>" +
                 "<p>" +
@@ -36,10 +25,9 @@ class RichFragment: Fragment() {
                 "</p>" +
                 "</body>" +
                 "</html>"
-        val webView = view.findViewById<WebView>(R.id.webView)
-        webView?.settings?.javaScriptEnabled = true
-        webView?.webViewClient = WebViewClient()
-        webView.settings.allowFileAccess = true
-        webView?.loadDataWithBaseURL(null, htmlData2, "text/html", "UTF-8", null)
+        binding.webView.settings.javaScriptEnabled = true
+        binding.webView.webViewClient = WebViewClient()
+        binding.webView.settings.allowFileAccess = true
+        binding.webView.loadDataWithBaseURL(null, htmlData2, "text/html", "UTF-8", null)
     }
 }

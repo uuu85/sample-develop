@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/home_padding_vertical">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/wd_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/wd_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/html_btn"
+            style="@style/btn_font_white"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/btn_padding_vertical"
+            android:text="@string/html_sample_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/wd_start"
+            app:layout_constraintEnd_toEndOf="@id/wd_end"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

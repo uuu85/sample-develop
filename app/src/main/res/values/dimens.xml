@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- common-->
+    <dimen name="btn_width">0dp</dimen>
+    <dimen name="btn_padding_vertical">8dp</dimen>
+
+    <!-- home-->
+    <dimen name="home_padding_vertical">16dp</dimen>
+
+    <!-- html-->
+    <dimen name="plane_img_size">100dp</dimen>
+    <dimen name="plane_margin_top">10dp</dimen>
+    <dimen name="plane_padding">16dp</dimen>
+</resources>

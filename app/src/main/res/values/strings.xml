@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">SmapleHtml</string>
+    <string name="app_name">SmaplePj</string>
+
+    <!-- html sample-->
+    <string name="html_sample_btn">HTML SAMPLE</string>
+    <string name="plane_btn">PLANE TEXT</string>
+    <string name="rich_btn">RICH TEXT</string>
 </resources>

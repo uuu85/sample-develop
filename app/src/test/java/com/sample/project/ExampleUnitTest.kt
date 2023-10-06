@@ -1,4 +1,4 @@
-package com.sample.html
+package com.sample.project
 
 import org.junit.Test
 
